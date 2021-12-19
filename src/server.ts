@@ -11,11 +11,6 @@ app.get('/', (request, response) => {
     })
 })
 
-app.post('/', (request, response) => {
-    // cosnoe
-    response.json(request.body)
-})
-
-app.use("categories",categoriesRoutes)
+app.use(categoriesRoutes)
 
 app.listen(3000, ( ) => console.log('Server is running!'))
