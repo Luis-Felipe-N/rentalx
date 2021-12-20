@@ -1,12 +1,23 @@
-import { Category }  from '../model/Category'
-import { ICategoriesRepository } from './ICategoriesRepository'
+import { Category }  from '../../model/Category'
+import { ICategoriesRepository } from '../ICategoriesRepository'
 
 
 class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[]
 
-    constructor() {
+    private static INSTACE: CategoriesRepository
+
+    private constructor() {
         this.categories = [  ]
+    }
+
+    public static getInstance() : CategoriesRepository {
+
+        if (!CategoriesRepository.INSTACE) {
+            CategoriesRepository.INSTACE = new CategoriesRepository
+        }
+
+        return CategoriesRepository.INSTACE
     }
 
     create({ name, description }): void {
