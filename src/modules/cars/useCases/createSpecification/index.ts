@@ -4,8 +4,8 @@ import { CreateSpecificationUseCase } from './CreateSpecificationUseCase'
 
 const specificationsRepository = new SpecificationsRepository()
 
-const createSpecificationsUseCase = new CreateSpecificationUseCase(specificationsRepository)
+const createSpecificationUseCase = new CreateSpecificationUseCase(specificationsRepository)
 
-const createSpecificationController = new CreateSpecificationController(createSpecificationsUseCase)
+const createSpecificationController = new CreateSpecificationController(createSpecificationUseCase)
 
 export { createSpecificationController }
